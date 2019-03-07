@@ -1,0 +1,5 @@
+---
+- name: update rkhunter database
+  shell: rkhunter --update; rkhunter --propupd
+  failed_when: no
+  tags: rkhunter

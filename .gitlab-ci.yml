@@ -1,0 +1,14 @@
+---
+image: williamyeh/ansible:ubuntu16.04
+
+stages:
+    - build:
+
+before_script:
+    - apt update -y && apt install -y docker.io
+    - pip install molecule docker-py
+
+ansible_build:
+    stage: build
+    script:
+        - molecule test
